@@ -6,9 +6,62 @@
 	</head>
 	<body>
 	<script>
+		'use strict'
+		// comment declarer un tableau 1
+		const monTableau1 = []
 		
+		// comment declarer un tableau 2
+		// le tableau a une longueur de 10
+		const monTableau2 = new Array(10)
 
-	</script>
+		// mal propre
+		monTableau1[0] = 'Marty'
+		monTableau1[1] = 'Mc'
+		monTableau1[2] = 'Fly'
+		console.table(monTableau1)
+
+		const tableauPropre = []
+		// push ajoute à la fin du tableau
+		tableauPropre.push('est')
+		tableauPropre.push('un')
+		tableauPropre.push(0.5)
+		tableauPropre.push('dieu')
+
+		// ajoute au début du tableau
+		tableauPropre.unshift("Antoine")
+		
+		//retire un élément au début du tableau
+		tableauPropre.shift()
+		//retire un élément à la fin du tableau
+		tableauPropre.pop()
+		console.table(tableauPropre)
+
+		const nbElem = tableauPropre.length
+		for(let i = 0; i < nbElem; i++){
+			
+			console.log(tableauPropre[i])
+		}
+
+		for(let item of tableauPropre) {
+			console.log(item)
+		}
+
+		tableauPropre.forEach(elem => {
+			console.log('lambda',elem)
+		})
+
+		const tableauSplice = []
+		for(let i = 0; i <=5; i++){
+			tableauSplice.push(i)
+		}
+
+		console.table(tableauSplice)
+		// Retire les éléments de l'indice 1 à 4
+		// Et ajoute les trois autres string
+		tableauSplice.splice(1,4,'un', 'nouvel', 'element')
+		console.table(tableauSplice)
+
+		</script>
 	</body>
 </html>
 <script>
