@@ -5,7 +5,33 @@
 		<meta charset="utf-8"/>
 	</head>
 	<body>
-	<script>
-	</script>
+		<script>
+			'use strict'
+			var var1 = 'salut'
+			console.log(var1)
+			var1 = 'allo'
+			console.log(var1)
+			const VAR_CONST = 'bye'
+			console.log(VAR_CONST)
+			
+			// ne fonctionne pas varConst = 'redeclaration'
+			let age =  31
+			// Ca fait une valeur reel entre 0 et 100
+			age = Math.random() * 100
+			console.log(age)
+			age = Math.floor(Math.random() * 100)
+			console.log(age)
+
+			const vrai = true
+			if (vrai === true) {
+				alert("c'est vrai")
+			} else if(vrai === false) {
+				alert("c'est pas vrai")
+			} else {
+				alert("ni faux ni vrai")
+			}
+		</script>	
 	</body>
 </html>
+
+
