@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <title>Recherche</title>
-        <meta charset="utf-8" />
-		<link href="css/global.css" rel="stylesheet" />
-	</head>
-	<body>
-		<div>
-			<script>
+
+<head>
+	<title>Recherche</title>
+	<meta charset="utf-8" />
+	<link href="css/global.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div>
+		<form onsubmit="return validate()">
+			<div class="search-line">
+				<div class="form-left">
+					<input id="recherche" type="text" name="searchBox" value="Mots clés" />
+				</div>
+				<div class="form-right">
+					<input type="image" src="images/search-btn.png" />
+				</div>
+				<div class="clear"></div>
+			</div>
+		</form>
+	</div>
+	<script>
+		const validate = () => {
+			let errors = []
+
+			// retourne la valeur contenue dans le input qui a le id recherche
+			let recherche = document.getElementById('recherche').value
+
+			if (recherche.length === 0) {
+				errors.push("doit entrer kek chose")
+			}
+
+			if (recherche === "Mots clés") {
+				errors.push("pas mots cles")
+			}
+
+			if (errors.length > 0) {
+				let msg = "Erreur(s) de validation : "
+				errors.forEach(e => {
+					msg += `\n ${e}`
+				})
+				alert(msg)
+				//
+			}
+			return true
+			// return true n'est pas nécessaire, il sera envoyé quand on ne retourne rien
+		}
 				// Ajouter la logique permettant de valider le formulaire suivant
 				// Il faut permettre l'envoi du formulaire SEULEMENT lorsque : 
 				// 1- La valeur du champ searchBox n'est pas vide
 				// 2- La valeur du champ searchBox n'est pas "Mots clés"
-			</script>
-			<form>
-				<div class="search-line">
-					<div class="form-left">
-						<input type="text" name="searchBox" value="Mots clés"/>
-					</div>
-					<div class="form-right">
-						<input type="image" src="images/search-btn.png" />
-					</div>
-					<div class="clear"></div>
-				</div>
-			</form>
-		</div>
-	</body>
+	</script>
+</body>
+
 </html>
 
 <script>
