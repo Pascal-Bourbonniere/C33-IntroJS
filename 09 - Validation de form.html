@@ -5,16 +5,49 @@
 		<meta charset="utf-8"/>
 	</head>
 	<body>
-		<script>
-			
-		</script>
-		
-		<form action="#" method="get">
+		<form action="#" method="get" onsubmit="return validate()">
 			<input type="text" name="cityName" id="city" placeholder="Nom d'une ville">
 			<button type="submit">Rechercher</button>
 		</form>
+		<script>
+			// Pour valider un formulaire avec javascript
+			// il faut ajouter onsubmit dans la balise form du formulaire
+			// onsubmit="return validate()"
+			// il faut écrire une fonction qui retourne true ou false
+			// true, le formulaire est bon
+			// false, le formulaire n'est pas bon, il ne sera pas envoyé
+
+			const validate = () => {
+				console.log('je suis dans validate')
+				let errors = []
+	
+				// retourne la valeur contenue dans le input qui a le id city
+				let city = document.getElementById('city').value
+				console.log(city)
+				
+				if(city.length <= 2) {
+					errors.push("La ville doit avoir plus de 2 caractères")
+				}
+	
+				if(!city.match(/^[a-z\s\-A-Z]*$/)) {
+					errors.push("La ville ne respecte pas les caracteres permis")
+				}
+	
+				if (errors.length > 0) {
+					let msg = "Erreur(s) de validation : "
+					errors.forEach(e => {
+						msg += `\n ${e}`
+					})
+					alert(msg)
+					// Le formulaire ne sera pas envoyé
+						
+				}
+				return true
+				// return true n'est pas nécessaire, il sera envoyé quand on ne retourne rien
+			}
+			
+
+		</script>
 	</body>
-	<script>
-	</script>
 </html>
 

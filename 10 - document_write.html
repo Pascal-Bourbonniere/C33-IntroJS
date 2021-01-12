@@ -5,10 +5,15 @@
 		<meta charset="utf-8"/>
 	</head>
 	<body>
-		Vous avez quel âge ? 
+		Vous avez quel âge ?
 		<form action="#" method="get">
 			<select name="age">
-				<option value="">Choisir</option>
+				<script>
+					for(let i = 16; i <= 99; i++) {
+						// document.write ecrit une string.
+						document.write(`<option value="${i}">${i} ans</option>`)
+					}
+				</script>
 			</select>
 		</form>
 	</body>
