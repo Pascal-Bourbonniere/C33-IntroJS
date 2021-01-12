@@ -6,6 +6,20 @@
 	</head>
 	<body>
 		<script>
+			// boite de dialogue avec un input
+			let age = prompt("Quel âge avez-vous?")
+
+			if (age < 31) {
+				// boite de dialogue message
+				alert("Vous etes jeune!")
+			} else {
+				// boite de dialogue oui/non
+				let resultat = confirm("Pensez-vous à la retraite")
+
+				if (!resultat) {
+					alert("Vous devriez")
+				}
+			}
 		</script>
 	</body>
 </html>
