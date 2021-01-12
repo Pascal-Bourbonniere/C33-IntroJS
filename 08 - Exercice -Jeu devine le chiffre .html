@@ -12,6 +12,19 @@
 			// 2- Tant que l'usager n'a pas trouvé le bon chiffre, lui demander via une boite "prompt"
 			// 3- Si l'usager trouve le bon chiffre, afficher une boîte d'alerte avec : "Bravo! Vous avez gagné!"
 			// 4- Finalement, demander au joueur s'il veut rejouer via une boîte "confirm". Si oui, rappelez la fonction "jouer"
+
+			const jouer = () => {
+				const chiffre = Math.floor(Math.random() * 9) + 1
+				// retourne le chiffre choisi sous la forme d'une string
+				let chiffreChoisi = 0
+				// ici on met != pour ne pas comparer le type
+				while(chiffreChoisi != chiffre) {
+					chiffreChoisi = prompt('Entrez un chiffre')
+				} 
+				alert(`Bravo! le chiffre était bien ${chiffre}`)
+				return confirm('Voulez-vous rejouter?')
+			}
+			while(jouer()) {}
 		</script>
 	</body>
 </html>
